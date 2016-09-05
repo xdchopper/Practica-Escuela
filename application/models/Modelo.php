@@ -5,9 +5,9 @@
 		{
 
 		}
-		public function Create($Usuario)
+		public function Create($usuario)
 		{
-			if($this->db->insert('catalogo',$Usuario))
+			if($this->db->insert('catalogo',$usuario))
 			{
 				return true;
 			}
@@ -17,17 +17,55 @@
 			}
 		}
 		
-		public function Read()
+		public function Read($busqueda)
 		{
-			$consulta=$this->db->get('catalogo');
-			return $consulta->result();
+			if(empty($busqueda))
+			{
+
+			}
+			else
+			{
+				$this->db->like('Nombre',$busqueda);
+			}
+			$resultado=$this->db->get('catalogo');
+			if($resultado->num_rows()>0)
+			{
+				return $resultado->result();
+			}
+			else
+			{
+				return false;
+			}
 		}
-		}
-		/*
-		public function Update($Código,$Nombre)
+		public function traerUsuario($usuario)
 		{
-			$sql="UPDATE Usuario(Código,Nombre) SET ('".$Código."','".$Nombre."')";
+			$this->db->like('ID',$usuario);
+			$resultado=$this->db->get('catalogo');
+			return $resultado->row();
 		}
-		*/
+		public function Update($usuario,$id)
+		{
+			$this->db->where('ID',$id);
+			if($this->db->update('catalogo',$usuario))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		public function Delete($id)
+		{
+			$this->db->where('ID',$id);
+			if($this->db->delete('catalogo'))
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	}
 ?>
