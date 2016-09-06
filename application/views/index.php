@@ -12,6 +12,13 @@
 		{
 			window.location="<?php echo site_url('/controlador/update'); ?>";
 		}
+<<<<<<< HEAD
+=======
+		function Eliminar()
+		{
+
+		}
+>>>>>>> cb01eae41359c975c46e452cd4570e3a72aefb51
 	</script>
 </head>
 <body>

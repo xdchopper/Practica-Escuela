@@ -12,7 +12,11 @@
 		$id='';
 		$nombre='';
 		$edad='';
+<<<<<<< HEAD
 		$sexo='';
+=======
+		$sexo='0';
+>>>>>>> cb01eae41359c975c46e452cd4570e3a72aefb51
 		$accion="create";
 	}
  ?>
@@ -42,9 +46,15 @@
 						<?php 
 					switch ($sexo) 
 					{
+<<<<<<< HEAD
 						case '':
 						?>
 							<option value="" selected>Seleccione...</option>
+=======
+						case '0':
+						?>
+							<option value="0" selected>Seleccione...</option>
+>>>>>>> cb01eae41359c975c46e452cd4570e3a72aefb51
 							<option value="M">Masculino</option>
 							<option value="F">Femenino</option>
 						<?php
