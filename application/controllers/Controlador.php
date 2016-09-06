@@ -9,17 +9,11 @@
 		}
 		public function index()
 		{
-<<<<<<< HEAD
 			$row = null;
 			$this->load->model('Modelo');
 			$data['usuarios']='';
 			$data['usuarioActualizar'] = $row;
 			$this->load->view('index', $data);	
-=======
-			$this->load->model('Modelo');
-			$data['usuarios']='';
-			$this->load->view('index',$data);	
->>>>>>> cb01eae41359c975c46e452cd4570e3a72aefb51
 		}
 		public function create()
 		{
@@ -27,7 +21,6 @@
 			$validaciones = array(
                 array(
                         'field' => 'txtNombre',
-<<<<<<< HEAD
                         'label' => 'Nombre',
                         'rules' => 'required|alpha',
                         'errors' => array('required' => "El %s es requerido!",
@@ -39,43 +32,24 @@
                         'rules' => 'required|numeric',
                         'errors' => array('required' => "El %s es requerido!",
                         			       'alpha' => "El %s solo acepta números!")
-=======
-                        'label' => 'Name',
-                        'rules' => 'required|alpha'
-                ),
-                array(
-                        'field' => 'txtEdad',
-                        'label' => 'Age',
-                        'rules' => 'required|numeric'
->>>>>>> cb01eae41359c975c46e452cd4570e3a72aefb51
                 )
                 ,
                 array(
                         'field' => 'sltSexo',
-<<<<<<< HEAD
                         'label' => 'Sexo',
                         'rules' => 'required',
                         'errors' => array('required' => "El %s es requerido!")
-=======
-                        'label' => 'Genre',
-                        'rules' => 'required'
->>>>>>> cb01eae41359c975c46e452cd4570e3a72aefb51
                 )
         	);
 			$this->form_validation->set_rules($validaciones);
 
 			if ($this->form_validation->run() == FALSE){
-<<<<<<< HEAD
 				 $row = new stdClass();
 				 $row->ID = 0;
 				 $row->Nombre = $this->input->post('txtNombre');
 				 $row->Edad = $this->input->post('txtEdad');
 				 $row->Sexo = $this->input->post('sltSexo');
                  $this->Agregar($row);
-=======
-
-                    $this->Agregar();
->>>>>>> cb01eae41359c975c46e452cd4570e3a72aefb51
             }
             else{
             		$usuario= array('nombre' => $this->input->post('txtNombre'),
@@ -94,7 +68,6 @@
             	}
 			/*$this->load->helper('url');*/	
 		}
-<<<<<<< HEAD
 
 		public function Agregar($row = null)
 		{
@@ -102,12 +75,6 @@
 			$this->load->view('catalogo', $data);
 		}
 
-=======
-		public function Agregar()
-		{
-			$this->load->view('catalogo');
-		}
->>>>>>> cb01eae41359c975c46e452cd4570e3a72aefb51
 		public function read()
 		{
 			$this->load->model('Modelo');
