@@ -13,6 +13,16 @@
 			$this->load->model('Modelo');
 			$data['usuarios']='';
 			$data['usuarioActualizar'] = $row;
+			$busqueda=$this->input->post('txtBuscar');
+			$resultado=$this->Modelo->Read($busqueda);
+			if($resultado!=false)
+			{
+				$data['usuarios']=$resultado;
+			}
+			else
+			{
+				$data['usuarios']='';	
+			}
 			$this->load->view('index', $data);	
 		}
 		public function create()
@@ -66,7 +76,6 @@
 					}
                     $this->load->view('formsuccess');
             	}
-			/*$this->load->helper('url');*/	
 		}
 
 		public function Agregar($row = null)

@@ -5,7 +5,14 @@
 		$nombre=$usuarioActualizar->Nombre;
 		$edad=$usuarioActualizar->Edad;
 		$sexo=$usuarioActualizar->Sexo;
-		$accion="update";
+		if($id==0)
+		{
+			$accion="create";
+		}
+		else
+		{
+			$accion="update";
+		}	
 	}
 	else
 	{
