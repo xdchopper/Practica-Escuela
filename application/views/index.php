@@ -43,7 +43,7 @@
 				ALUMNOS
 			</div>
 			<div class="panel-body">
-				<table class="table table-striped table-hover table-bordered">
+				<table class="table table-striped table-hover table-bordered table-condensed">
 					<?php if($usuarios){ ?>
 						<tr style="background-color:#81BEF7">
 							<th><label for="lblID">ID</label></th>
@@ -59,7 +59,7 @@
 								<td><?php echo $usuario->Edad ?></td>
 								<td><?php echo $usuario->Sexo ?></td>
 								<td><a href="<?php echo site_url('/controlador/llenarCatalogo/'); ?><?php echo $usuario->ID ?>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
-								<td><a href="<?php echo site_url('/controlador/delete/'); ?><?php echo $usuario->ID ?>">Eliminar</a></td>
+								<td><a href="<?php echo site_url('/controlador/delete/'); ?><?php echo $usuario->ID ?>"><button><span class="glyphicon glyphicon-remove"></span></a></td>
 							</tr>
 						<?php } ?>
 					<?php } ?>
