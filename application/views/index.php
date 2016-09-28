@@ -58,7 +58,7 @@
 								<td><label for="lbl<?php echo $usuario->ID ?>" name="lbl<?php echo $usuario->ID ?>" value="<?php echo $usuario->Nombre ?>"><?php echo $usuario->Nombre ?></label></td>
 								<td><?php echo $usuario->Edad ?></td>
 								<td><?php echo $usuario->Sexo ?></td>
-								<td><a href="<?php echo site_url('/controlador/llenarCatalogo/'); ?><?php echo $usuario->ID ?>">Editar</a></td>
+								<td><a href="<?php echo site_url('/controlador/llenarCatalogo/'); ?><?php echo $usuario->ID ?>"><button><span class="glyphicon glyphicon-pencil"></span></button></a></td>
 								<td><a href="<?php echo site_url('/controlador/delete/'); ?><?php echo $usuario->ID ?>">Eliminar</a></td>
 							</tr>
 						<?php } ?>

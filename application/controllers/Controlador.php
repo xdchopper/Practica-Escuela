@@ -32,16 +32,15 @@
                 array(
                         'field' => 'txtNombre',
                         'label' => 'Nombre',
-                        'rules' => 'required|alpha',
-                        'errors' => array('required' => "El %s es requerido!",
-                        			       'alpha' => "El %s solo acepta letras!")
+                        'rules' => 'required',
+                        'errors' => array('required' => "El %s es requerido!")
                 ),
                 array(
                         'field' => 'txtEdad',
                         'label' => 'Edad',
                         'rules' => 'required|numeric',
-                        'errors' => array('required' => "El %s es requerido!",
-                        			       'alpha' => "El %s solo acepta números!")
+                        'errors' => array('required' => "La %s es requerida!",
+                        			       'numeric' => "La %s solo acepta números!")
                 )
                 ,
                 array(
